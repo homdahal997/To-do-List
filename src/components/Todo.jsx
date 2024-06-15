@@ -2,7 +2,7 @@ import { useState } from "react";
 function Todo({ todo, onComplete, onDelete, onEdit, onSave, isEditing }) {
     const [editText, setEditText] = useState(todo.text);
     return (
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <>
             <input
                 type="checkbox"
                 checked={todo.complete}
@@ -34,7 +34,7 @@ function Todo({ todo, onComplete, onDelete, onEdit, onSave, isEditing }) {
                     </button>
                 </>
             )}
-        </div>
+        </>
     );
 }
 export default Todo

@@ -28,8 +28,7 @@ function App() {
             <div className="col col-xl-10">
               <div className="card">
                 <div className="card-body p-5">
-                  <h1>ToDo Lists</h1>
-                  <h3> This is the place for our form </h3>
+                  <h1>ToDo List</h1>
                   <AddTodo dispatch={dispatch} state={state} />
                 </div>
               </div>

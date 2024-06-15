@@ -1,12 +1,15 @@
+import React from 'react';
 import Todo from "./Todo";
+
+
 function AddTodo({ dispatch, state }) {
-    const newTodoItem = {
-        id: Date.now(),
-        text: state.newTodo,
-        complete: false,
-    };
     const addTodo = (e) => {
         e.preventDefault();
+        const newTodoItem = {
+            id: Date.now(),
+            text: state.newTodo,
+            complete: false,
+        };
         dispatch({ type: 'ADD_TODO', payload: newTodoItem });
     };
     const completeTodo = (id) => {
@@ -27,27 +30,44 @@ function AddTodo({ dispatch, state }) {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Todo List</h1>
-            <input
-                type="text"
-                value={state.newTodo}
-                onChange={(e) => dispatch({ type: 'SET_NEW_TODO', payload: e.target.value })}
-                placeholder="Add new todo"
-            />
-            <button onClick={addTodo}>Add</button>
-            {state.todos.map((todo) => (
-                <Todo
-                    key={todo.id}
-                    todo={todo}
-                    onComplete={completeTodo}
-                    onDelete={deleteTodo}
-                    onEdit={editTodo}
-                    onSave={saveTodo}
-                    isEditing={state.editingId === todo.id}
-                />
-            ))}
+            <form className="d-flex justify-content-center align-items-center mb-4" onSubmit={addTodo}>
+                <div className="form-outline flex-fill">
+                    <input
+                        type="text"
+                        id="form2"
+                        className="form-control"
+                        value={state.newTodo}
+                        onChange={(e) => dispatch({ type: 'SET_NEW_TODO', payload: e.target.value })}
+                        style={{ border: '1px solid #39c0ed' }}
+                    />
+                    <label className="form-label" htmlFor="form2">Enter TODO</label>
+                </div>
+                <button id="addtodobutton" type="submit" className="btn btn-info ms-2">Add</button>
+            </form>
+            <div className="tab-content" id="ex1-content">
+                <div className="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                    aria-labelledby="ex1-tab-1">
+                    <ul id="mytodo" className="list-group mb-0">
+
+                        {state.todos.map((todo) => (
+                            <li key={todo.id} className="list-group-item d-flex align-items-center border-0 mb-2 rounded" style={{ backgroundColor: '#f4f6f7' }}>
+                                <Todo
+                                    key={todo.id}
+                                    todo={todo}
+                                    onComplete={completeTodo}
+                                    onDelete={deleteTodo}
+                                    onEdit={editTodo}
+                                    onSave={saveTodo}
+                                    isEditing={state.editingId === todo.id}
+                                />
+                            </li>
+                        ))}
+
+                    </ul>
+                </div>
+            </div>
         </div>
     );
-};
+}
 
 export default AddTodo;
