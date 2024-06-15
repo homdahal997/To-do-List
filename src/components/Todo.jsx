@@ -21,15 +21,15 @@ function Todo({ todo, onComplete, onDelete, onEdit, onSave, isEditing }) {
                 </span>
             )}
             {isEditing ? (
-                <button onClick={() => onSave(todo.id, editText)} style={{ marginLeft: '10px' }}>
+                <button onClick={() => onSave(todo.id, editText)} style={{ marginLeft: '100px' }}>
                     Save
                 </button>
             ) : (
                 <>
-                    <button onClick={() => onEdit(todo.id)} style={{ marginLeft: '10px' }}>
-                        Edit
+                    <button onClick={() => onEdit(todo.id)} style={{ marginLeft: '50px' }}>
+                    <FontAwesomeIcon icon={faEdit} />
                     </button>
-                    <button onClick={() => onDelete(todo.id)} disabled={!todo.complete} style={{ marginLeft: '10px' }}>
+                    <button onClick={() => onDelete(todo.id)} disabled={!todo.complete} style={{ marginLeft: '50px' }}>
                         Delete
                     </button>
                 </>

@@ -8,7 +8,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     // Fetch initial todos from the API
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=1')
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.map((todo) => ({
