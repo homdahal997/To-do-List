@@ -4,11 +4,13 @@ import AddTodo from './components/AddTodo';
 import './App.css'
 import './assets/css/bootstrap-to-do-list.min.css'
 
+
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     // Fetch initial todos from the API
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=1')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.map((todo) => ({

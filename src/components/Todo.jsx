@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 function Todo({ todo, onComplete, onDelete, onEdit, onSave, isEditing }) {
     const [editText, setEditText] = useState(todo.text);
     return (
@@ -27,10 +28,10 @@ function Todo({ todo, onComplete, onDelete, onEdit, onSave, isEditing }) {
             ) : (
                 <>
                     <button onClick={() => onEdit(todo.id)} style={{ marginLeft: '50px' }}>
-                    <FontAwesomeIcon icon={faEdit} />
+                    Edit
                     </button>
                     <button onClick={() => onDelete(todo.id)} disabled={!todo.complete} style={{ marginLeft: '50px' }}>
-                        Delete
+                    Delete
                     </button>
                 </>
             )}
