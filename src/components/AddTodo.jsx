@@ -47,23 +47,25 @@ function AddTodo({ dispatch, state }) {
             <div className="tab-content" id="ex1-content">
                 <div className="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
                     aria-labelledby="ex1-tab-1">
-                    <ul id="mytodo" className="list-group mb-0">
-
-                        {state.todos.map((todo) => (
-                            <li key={todo.id} className="list-group-item d-flex align-items-center border-0 mb-2 rounded" style={{ backgroundColor: '#f4f6f7' }}>
-                                <Todo
-                                    key={todo.id}
-                                    todo={todo}
-                                    onComplete={completeTodo}
-                                    onDelete={deleteTodo}
-                                    onEdit={editTodo}
-                                    onSave={saveTodo}
-                                    isEditing={state.editingId === todo.id}
-                                />
-                            </li>
-                        ))}
-
-                    </ul>
+                    {state.todos.length > 0 ? (
+                        <ul id="mytodo" className="list-group mb-0">
+                            {state.todos.map((todo) => (
+                                <li key={todo.id} className="list-group-item d-flex align-items-center border-0 mb-2 rounded" style={{ backgroundColor: '#f4f6f7' }}>
+                                    <Todo
+                                        key={todo.id}
+                                        todo={todo}
+                                        onComplete={completeTodo}
+                                        onDelete={deleteTodo}
+                                        onEdit={editTodo}
+                                        onSave={saveTodo}
+                                        isEditing={state.editingId === todo.id}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No todos yet! Add them in the input field to replace this area or refresh the page to see todos from fetch API</p>
+                    )}
                 </div>
             </div>
         </div>
