@@ -1,10 +1,13 @@
-function AddTodo({ dispatch }) {
+function AddTodo({ dispatch, state }) {
     const newTodoItem = {
         id: Date.now(),
         text: state.newTodo,
         complete: false,
     };
-    dispatch({ type: 'ADD_TODO', payload: newTodoItem })
+    const addTodo = (e) => {
+        e.preventDefault();
+        dispatch({ type: 'ADD_TODO', payload: newTodoItem });
+    };
 
     return (
         <form className="d-flex justify-content-center align-items-center mb-4">
