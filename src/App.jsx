@@ -1,5 +1,6 @@
 import React, {useReducer, useEffect} from 'react';
 import { initialState, reducer } from './reducers/TodoReducer';
+import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import './App.css'
 import './assets/css/bootstrap-to-do-list.min.css'
@@ -30,7 +31,7 @@ function App() {
             <div className="col col-xl-10">
               <div className="card">
                 <div className="card-body p-5">
-                  <h1>ToDo List</h1>
+                  <Header title = "ToDo List"></Header>
                   <AddTodo dispatch={dispatch} state={state} />
                 </div>
               </div>
