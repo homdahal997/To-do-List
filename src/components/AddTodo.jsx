@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from "./Todo";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -28,6 +29,15 @@ function AddTodo({ dispatch, state }) {
 
     const deleteTodo = (id) => {
         dispatch({ type: 'DELETE_TODO', payload: id });
+        toast.error('Todo deleted successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
     const editTodo = (id) => {
@@ -36,6 +46,15 @@ function AddTodo({ dispatch, state }) {
 
     const saveTodo = (id, text) => {
         dispatch({ type: 'SAVE_TODO', payload: { id, text } });
+        toast.info('Todo saved successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
     return (
