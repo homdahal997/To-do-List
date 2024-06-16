@@ -2,6 +2,7 @@ import React, {useReducer, useEffect} from 'react';
 import { initialState, reducer } from './reducers/TodoReducer';
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
+import Footer from './components/Footer';
 import './App.css'
 import './assets/css/bootstrap-to-do-list.min.css'
 
@@ -11,7 +12,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     // Fetch initial todos from the API
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=1')
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.map((todo) => ({
@@ -33,6 +34,7 @@ function App() {
                 <div className="card-body p-5">
                   <Header title = "ToDo List"></Header>
                   <AddTodo dispatch={dispatch} state={state} />
+                  <Footer />
                 </div>
               </div>
             </div>
