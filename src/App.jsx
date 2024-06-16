@@ -5,6 +5,8 @@ import AddTodo from './components/AddTodo';
 import Footer from './components/Footer';
 import './App.css'
 import './assets/css/bootstrap-to-do-list.min.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -35,6 +37,7 @@ function App() {
                   <Header title = "ToDo List"></Header>
                   <AddTodo dispatch={dispatch} state={state} />
                   <Footer year={new Date().getFullYear()} />
+                  <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
                 </div>
               </div>
             </div>
