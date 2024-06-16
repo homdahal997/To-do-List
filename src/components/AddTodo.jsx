@@ -4,11 +4,11 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 
-function AddTodo({ dispatch, state }) {
+function AddTodo({ index, dispatch, state }) {
     const addTodo = (e) => {
         e.preventDefault();
         const newTodoItem = {
-            id: Date.now(),
+            id: index,
             text: state.newTodo,
             complete: false,
         };
