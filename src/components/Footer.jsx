@@ -1,13 +1,13 @@
 import React from 'react';
 import hearticon from '../../public/heart.png'
 
-function Footer() {
+function Footer({year}) {
     return (
         <>
             <footer id="footer">
                 <hr />
                 <p>
-                    <span id="copyright">&copy; 2024</span>
+                    <span>&copy; {year} </span>
                     Designed with <img src={hearticon} /> by Hom Dahal
                 </p>
             </footer>

@@ -12,7 +12,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     // Fetch initial todos from the API
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=1')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=2')
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.map((todo) => ({
@@ -34,7 +34,7 @@ function App() {
                 <div className="card-body p-5">
                   <Header title = "ToDo List"></Header>
                   <AddTodo dispatch={dispatch} state={state} />
-                  <Footer />
+                  <Footer year={new Date().getFullYear()} />
                 </div>
               </div>
             </div>
