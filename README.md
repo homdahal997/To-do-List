@@ -6,6 +6,8 @@ The user interface for this React Todo List application builds upon a previous p
 
 [Todo App using JavaScript DOM](https://github.com/homdahal997/SBA-DOM-mytodo-app)
 
+[Live Demo of the app](https://todos.homdahal.me/)
+
 This previous project laid the groundwork for the design and functionality, which has been further refined and integrated into the React ecosystem in the current application.
 
 This project is a simple yet powerful React Todo List application built with Vite. It allows users to add, complete, and delete tasks, providing a smooth and interactive user experience. The application leverages React's efficient update and rendering system, along with additional libraries such as `react-toastify` for notifications, to create a responsive and intuitive interface. In this application, we've efficiently utilized the useReducer, useState, and useEffect hooks
